@@ -35,6 +35,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
@@ -91,7 +92,9 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = viewMo
             value = email,
             onValueChange = { email = it },
             label = { Text("Correo electrónico") },
-            modifier = Modifier.fillMaxWidth(0.8f),
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .testTag("CampoEmail"),
             singleLine = true,
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedTextColor = Color.White,
@@ -122,7 +125,9 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = viewMo
                     password = ""
                 }
             },
-            modifier = Modifier.fillMaxWidth(0.8f)
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .testTag("BotonLogin")
         ) {
             Text("Iniciar Sesión")
         }

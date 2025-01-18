@@ -31,6 +31,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -149,7 +150,9 @@ fun PerfilScreen(navController: NavController) {
                 Image(
                     painter = painterResource(id = com.example.interfaz_din.R.drawable.user_image),
                     contentDescription = "Imagen de usuario",
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .testTag("ImagenUsuario"),
                     contentScale = ContentScale.Crop
                 )
             }

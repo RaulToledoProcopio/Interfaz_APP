@@ -30,6 +30,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -126,6 +127,7 @@ fun UFCScreen(navController: NavController) {
                     .padding(16.dp)
                     .border(2.dp, Color.Gray, shape = RoundedCornerShape(8.dp))
                     .padding(16.dp)
+                    .testTag("Resultados")
             ) {
 
                 Column {
