@@ -9,8 +9,6 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
-import androidx.navigation.NavController
-import androidx.test.core.app.ApplicationProvider
 import com.example.interfaz_din.Screens.FutbolScreen
 import com.example.interfaz_din.Screens.LoginScreen
 import com.example.interfaz_din.Screens.NBAScreen
@@ -19,15 +17,14 @@ import com.example.interfaz_din.Screens.UFCScreen
 import org.junit.Rule
 import org.junit.Test
 
-class ComponenteTest {
+class ComponenteTest () {
     @get : Rule
     val composeTestRule = createComposeRule()
 
     @Test
     fun testButtonLogin() {
-        val navController = NavController(ApplicationProvider.getApplicationContext())
         composeTestRule.setContent {
-            LoginScreen(navController)
+            LoginScreen()
         }
         composeTestRule.onNodeWithTag("BotonLogin")
             .assertIsEnabled() // Verificar que el botón de login está activado
